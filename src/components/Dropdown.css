@@ -1,0 +1,37 @@
+.dropdown {
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  border-radius: 5px;
+}
+.dropdown__title {
+  background: #ff6060;
+  border-radius: 5px;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.dropdown__text {
+  background-color: rgba(246, 246, 246, 1);
+  transition: transform 0.3s linear;
+  padding: 20px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  height: 100%;
+}
+.dropdown__arrow {
+  transition: transform 0.2s linear;
+}
+.dropdown__open .dropdown__arrow {
+  transform: rotate(180deg);
+}
+.dropdown__close .dropdown__text {
+  transform: translateY(-120%);
+}

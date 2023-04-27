@@ -1,0 +1,8 @@
+.navigation__list {
+  display: flex;
+}
+
+.navigation__list__link {
+  color: #ff6060;
+  margin: 30px;
+}

@@ -1,0 +1,10 @@
+.ratings__container {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.ratings__star {
+  height: 25px;
+  width: 25px;
+}
