@@ -1,58 +1,56 @@
 import './Announce.css';
 import { useParams } from 'react-router-dom';
 import { useFetchAnnounces } from '../../utils/hooks/useFetchAnnounces';
-import Carousel from './Carousel';
-import Tag from './Tag';
-import HostInfo from './HostInfo';
-import Ratings from './Rating';
-import Dropdown from '../../components/Dropdown';
+import Carousel from './components/carousel/Carousel';
+import Tag from './components/tag/Tag';
+import HostInfo from './components/hostInfo/HostInfo';
+import Ratings from './components/rating/Rating';
+import Dropdown from '../../shared/dropdown/Dropdown';
+import { Navigate } from 'react-router-dom';
 
 function Announce() {
   const { id } = useParams();
 
   let { isLoading, announces } = useFetchAnnounces();
-  const indexOfAnnounce = announces.findIndex((announce) => announce.id === id);
 
-  console.log('index de l"annonce est ' + indexOfAnnounce);
-  let announce = {};
-  let tags = [];
-  let host = {};
-  let rating;
-  if (indexOfAnnounce >= 0) {
-    announce = announces[indexOfAnnounce];
-    tags = announce.tags;
-    host = announce.host;
-    rating = announce.rating;
-    console.log('Rating: ' + rating);
+  const announce = announces.find((announce) => announce.id === id);
+
+  if (announces.length > 0 && !isLoading && !announce) {
+    return <Navigate to="/notFound" replace />;
+  } else {
+    return isLoading ? (
+      <div className="announce__loader"></div>
+    ) : (
+      <div className="announce">
+        {announce && (
+          <>
+            <Carousel images={announce.pictures} />
+            <div className="announce__presentation">
+              <div className="announce__specs">
+                <p className="announce__title">{announce.title}</p>
+                <p className="announce__location">{announce.location}</p>
+                <Tag tags={announce.tags} />
+              </div>
+              <div className="announce_host-info-rating__container">
+                <HostInfo
+                  image={announce.host.picture}
+                  name={announce.host.name}
+                />
+                <Ratings rating={announce.rating} />
+              </div>
+            </div>
+            <div className="announce__dropdowns__container">
+              <Dropdown title={'Description'} text={announce.description} />
+              <Dropdown
+                title={'Equipements'}
+                text={announce.equipments}
+                isList={true}
+              />
+            </div>
+          </>
+        )}
+      </div>
+    );
   }
-
-  return (
-    <div className="announce">
-      {announce && (
-        <>
-          <Carousel images={announce.pictures} />
-          <div className="announce__presentation">
-            <div className="announce__titles">
-              <h1>{announce.title}</h1>
-              <h2>{announce.location}</h2>
-              <Tag tags={tags} />
-            </div>
-            <div className="announce_host-info-rating__container">
-              <HostInfo image={host.picture} name={host.name} />
-              <Ratings rating={rating} />
-            </div>
-          </div>
-          <div className="announce__dropdowns__container">
-            <Dropdown title={'Description'} text={announce.description} />
-            <Dropdown
-              title={'Equipements'}
-              text={announce.equipments}
-              isList={true}
-            />
-          </div>
-        </>
-      )}
-    </div>
-  );
 }
 export default Announce;

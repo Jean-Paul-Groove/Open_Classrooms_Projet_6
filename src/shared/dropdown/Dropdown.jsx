@@ -1,10 +1,10 @@
 import './Dropdown.css';
-import arrow from '../assets/arrowDropdown.svg';
+import arrow from '../../assets/arrowDropdown.svg';
 import { useState } from 'react';
 
 function Dropdown(props) {
   const { title, text, isList } = props;
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   function handleClickDropdown(isOpen) {
     return isOpen ? setIsOpen(false) : setIsOpen(true);
   }

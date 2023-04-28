@@ -9,3 +9,8 @@
 .header__logo {
   width: 210px;
 }
+@media screen and (max-width: 700px) {
+  .header__logo {
+    width: 145px;
+  }
+}

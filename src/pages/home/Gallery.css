@@ -1,9 +1,0 @@
-.gallery {
-  background-color: #f7f7f7;
-  padding: 50px;
-  margin-top: 50px;
-  border-radius: 25px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
-}

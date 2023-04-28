@@ -1,6 +1,6 @@
 import './Rating.css';
-import star from '../../assets/rating.svg';
-import starGray from '../../assets/ratingGray.svg';
+import star from '../../../../assets/rating.svg';
+import starGray from '../../../../assets/ratingGray.svg';
 
 function Ratings(props) {
   const rating = props.rating;

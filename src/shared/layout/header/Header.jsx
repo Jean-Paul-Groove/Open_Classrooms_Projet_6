@@ -1,5 +1,5 @@
-import logo from '../../assets/LOGO.svg';
-import Navigation from './Navigation';
+import logo from '../../../assets/LOGO.svg';
+import Navigation from './navigation/Navigation';
 import './Header.css';
 function Header() {
   return (

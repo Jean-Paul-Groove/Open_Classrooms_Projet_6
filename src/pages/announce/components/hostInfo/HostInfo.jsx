@@ -9,7 +9,7 @@ function HostInfo(props) {
   return (
     <figure className="host-info">
       <img className="host-info__picture" alt={name} src={image}></img>
-      <figcaption classname="host-info__name">
+      <figcaption className="host-info__name">
         {name &&
           nameBreak.map &&
           nameBreak.map((word) => {

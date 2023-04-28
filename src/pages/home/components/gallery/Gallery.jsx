@@ -1,6 +1,6 @@
 import './Gallery.css';
-import { useFetchAnnounces } from '../../utils/hooks/useFetchAnnounces';
-import Card from './Card';
+import { useFetchAnnounces } from '../../../../utils/hooks/useFetchAnnounces';
+import Card from '../card/Card';
 
 function Gallery() {
   let { isLoading, announces } = useFetchAnnounces();

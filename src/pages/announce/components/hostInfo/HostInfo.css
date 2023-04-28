@@ -2,15 +2,16 @@
   margin: 0;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 100%;
 }
-.host-info figcaption {
+.host-info__name {
   font-size: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-right: 10px;
+  text-align: right;
 }
 
 .host-info__picture {

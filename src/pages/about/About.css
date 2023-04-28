@@ -1,8 +1,13 @@
 .about {
   margin-top: 50px;
 }
-.about__title {
-  font-size: 36px;
-  text-align: center;
-  margin-top: 60px;
+.about__dropdowns__container {
+  width: 82.5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1;
+  grid-row-gap: 30px;
 }

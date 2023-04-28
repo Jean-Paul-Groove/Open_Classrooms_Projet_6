@@ -1,8 +1,8 @@
 .ratings__container {
-  width: 200px;
+  width: 190px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .ratings__star {
   height: 25px;
