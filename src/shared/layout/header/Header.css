@@ -5,12 +5,21 @@
   align-content: center;
   width: 100%;
   padding-top: 40px;
+  overflow: hidden;
 }
 .header__logo {
   width: 210px;
 }
 @media screen and (max-width: 700px) {
+  .header {
+    padding-top: 20px;
+  }
   .header__logo {
     width: 145px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .header__logo {
+    width: 90px;
   }
 }

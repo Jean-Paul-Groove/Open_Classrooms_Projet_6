@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 .not-found__error-code {
   font-size: 288px;
@@ -24,4 +25,23 @@
   line-height: 26px;
   color: #ff6060;
   text-decoration: underline;
+}
+@media screen and (max-width: 750px) {
+  .not-found__error-code {
+    font-size: 150px;
+  }
+  .not-found__announcement {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .not-found__error-code {
+    font-size: 96px;
+  }
+  .not-found__announcement {
+    font-size: 18px;
+  }
+  .not-found__home-link {
+    font-size: 14px;
+  }
 }

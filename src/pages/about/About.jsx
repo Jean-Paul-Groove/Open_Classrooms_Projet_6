@@ -23,7 +23,7 @@ function About() {
   aboutList.push(fiability, respect, service, security);
   return (
     <div className="about">
-      <Banner img={bannerImg} />
+      <Banner img={bannerImg} isThickMobilebanner={true} />
       <div className="about__dropdowns__container">
         {aboutList.map &&
           aboutList.map((item) => {

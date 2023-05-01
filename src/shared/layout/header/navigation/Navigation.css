@@ -7,10 +7,17 @@
 
 .navigation__list__link {
   color: #ff6060;
-  margin: 30px;
+  margin-left: 4vw;
 }
 @media screen and (max-width: 700px) {
   .navigation__list {
     font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+@media screen and (max-width: 600px) {
+  .navigation__list__link {
+    margin: 0;
+    margin-left: 10px;
   }
 }

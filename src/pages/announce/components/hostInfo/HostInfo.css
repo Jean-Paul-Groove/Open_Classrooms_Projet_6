@@ -7,9 +7,10 @@
 }
 .host-info__name {
   font-size: 18px;
+  margin-top: 3px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-right: 10px;
   text-align: right;
 }
@@ -18,4 +19,12 @@
   border-radius: 50%;
   width: 64px;
   aspect-ratio: 1;
+}
+@media screen and (max-width: 650px) {
+  .host-info__name {
+    font-size: 12px;
+  }
+  .host-info__picture {
+    width: 32px;
+  }
 }
