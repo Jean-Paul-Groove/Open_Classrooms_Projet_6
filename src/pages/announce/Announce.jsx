@@ -31,7 +31,7 @@ function Announce() {
                 <p className="announce__location">{announce.location}</p>
                 <Tag tags={announce.tags} />
               </div>
-              <div className="announce_host-info-rating__container">
+              <div className="announce__host-info-rating__container">
                 <HostInfo
                   image={announce.host.picture}
                   name={announce.host.name}
@@ -42,7 +42,7 @@ function Announce() {
             <div className="announce__dropdowns__container">
               <Dropdown title={'Description'} text={announce.description} />
               <Dropdown
-                title={'Equipements'}
+                title={'Équipements'}
                 text={announce.equipments}
                 isList={true}
               />
