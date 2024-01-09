@@ -1,5 +1,4 @@
 .dropdown {
-  height: fit-content;
   overflow: hidden;
   position: relative;
   height: 100%;
@@ -34,6 +33,7 @@
   border-radius: 5px;
   height: 100%;
   overflow: hidden;
+  transform-origin: 50% 0;
 }
 
 .dropdown__arrow {
@@ -43,13 +43,16 @@
 .dropdown__open .dropdown__arrow {
   transform: rotate(-180deg);
 }
-.dropdown__close .dropdown__text {
+.dropdown__openning .dropdown__arrow {
+  transform: rotate(-180deg);
+}
+.dropdown__closed .dropdown__text {
+  transform: scaleY(0);
+}
+.dropdown__closing .dropdown__text {
   transform: translateY(-150%);
 }
 
-.dropdown__close {
-  height: 48px;
-}
 @media screen and (max-width: 700px) {
   .dropdown__title {
     font-size: 13px;
@@ -61,7 +64,7 @@
     padding-top: 40px;
     font-size: 12px;
   }
-  .dropdown__close {
+  .dropdown__closed {
     height: 30px;
   }
   .dropdown__arrow {

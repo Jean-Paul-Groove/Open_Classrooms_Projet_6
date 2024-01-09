@@ -4,20 +4,25 @@ import { useState } from 'react';
 
 function Dropdown(props) {
   const { title, text, isList } = props;
-  const [isOpen, setIsOpen] = useState(false);
-  function handleClickDropdown(isOpen) {
-    return isOpen ? setIsOpen(false) : setIsOpen(true);
+  const [dropdownStatus, setdropdownStatus] = useState('closed');
+  function handleClickDropdown(dropdownStatus) {
+    if (dropdownStatus === 'open') {
+      setdropdownStatus('closing');
+      setTimeout(() => setdropdownStatus('closed'), 300);
+    }
+    if (dropdownStatus === 'closed') {
+      setdropdownStatus('openning');
+      setTimeout(() => setdropdownStatus('open'), 300);
+    }
   }
   let list;
   if (isList && text) {
     list = text.slice(0);
     return (
-      <div
-        className={`dropdown ${isOpen ? 'dropdown__open' : 'dropdown__close'}`}
-      >
+      <div className={`dropdown  dropdown__${dropdownStatus}`}>
         <p
           className="dropdown__title"
-          onClick={() => handleClickDropdown(isOpen)}
+          onClick={() => handleClickDropdown(dropdownStatus)}
         >
           {title}
           <img src={arrow} alt="" className="dropdown__arrow" />
@@ -35,12 +40,10 @@ function Dropdown(props) {
     );
   } else {
     return (
-      <div
-        className={`dropdown ${isOpen ? 'dropdown__open' : 'dropdown__close'}`}
-      >
+      <div className={`dropdown  dropdown__${dropdownStatus}`}>
         <p
           className="dropdown__title"
-          onClick={() => handleClickDropdown(isOpen)}
+          onClick={() => handleClickDropdown(dropdownStatus)}
         >
           {title}
           <img src={arrow} alt="" className="dropdown__arrow" />

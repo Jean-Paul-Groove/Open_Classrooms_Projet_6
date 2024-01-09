@@ -19,7 +19,12 @@ function Gallery() {
       )}
       {announces.map((announce) => {
         return (
-          <Card id={announce.id} title={announce.title} key={announce.id} />
+          <Card
+            id={announce.id}
+            title={announce.title}
+            cover={announce.cover}
+            key={announce.id}
+          />
         );
       })}
     </div>
